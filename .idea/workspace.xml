@@ -6,8 +6,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/Travel/Airlines$Seats.class" afterPath="$PROJECT_DIR$/out/production/Travel/Airlines$Seats.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Travel/Airlines.class" afterPath="$PROJECT_DIR$/out/production/Travel/Airlines.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Travel/Ticket.class" afterPath="$PROJECT_DIR$/out/production/Travel/Ticket.class" />
-      <change beforePath="$PROJECT_DIR$/src/Airlines.java" afterPath="$PROJECT_DIR$/src/Airlines.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ticket.java" afterPath="$PROJECT_DIR$/src/Ticket.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -545,7 +543,7 @@
       <workItem from="1527759960182" duration="939000" />
       <workItem from="1527761335609" duration="392000" />
       <workItem from="1527762463635" duration="92000" />
-      <workItem from="1527762559742" duration="2000" />
+      <workItem from="1527762559742" duration="55000" />
     </task>
     <task id="LOCAL-00001" summary="ndryshime ne klasen Ticket">
       <created>1527756484441</created>
@@ -561,11 +559,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527756554816</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="...">
+      <created>1527762611505</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1527762611505</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129713000" />
+    <option name="totallyTimeSpent" value="129766000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -619,7 +624,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ndryshime ne klasen Ticket" />
-    <option name="LAST_COMMIT_MESSAGE" value="ndryshime ne klasen Ticket" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
