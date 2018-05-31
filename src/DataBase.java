@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 public class DataBase {
 
@@ -25,7 +24,7 @@ public class DataBase {
     }
 
 
-    public static AirlinesItem[] getAirlineslist() {
+    public AirlinesItem[] getAirlineslist() {
         AirlinesItem[] airlinesitems = new AirlinesItem[9];
         airlinesitems[0] = new AirlinesItem("Airline1");
         airlinesitems[1] = new AirlinesItem("Airline2");
@@ -49,8 +48,6 @@ public class DataBase {
         hotelsitems[5] = new HotelsItem("F");
         return hotelsitems;
     }
-
-
 
 
     public static class FromAirlinesItem {
@@ -141,4 +138,6 @@ public class DataBase {
 
 
     }
+
+
 }

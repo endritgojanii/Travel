@@ -8,6 +8,24 @@ import java.io.IOException;
 public class Hotels extends JFrame {
 
 
+    public static String emriihotelit;
+
+    public static String territur;
+
+    public static String femije;
+
+    public static String getEmriihotelit() {
+        return emriihotelit;
+    }
+
+    public static String getFemije() {
+        return femije;
+    }
+
+    public static String getTerritur() {
+        return territur;
+    }
+
     public static void main(String[] args) throws IOException {
 
         Hotels hotels = new Hotels();
@@ -29,6 +47,8 @@ public class Hotels extends JFrame {
         adult.setEditable(false);
         adult.addItemListener(e -> {
 
+            territur = String.valueOf(adult.getSelectedItem());
+
         });
         for (int i = 1; i < 21; i++) {
             adult.addItem(i);
@@ -43,6 +63,7 @@ public class Hotels extends JFrame {
         child.setBounds(360, 110, 130, 30);
         child.setEditable(false);
         child.addItemListener(e -> {
+            femije = String.valueOf(child.getSelectedItem());
 
         });
         for (int i = 0; i < 11; i++) {
@@ -71,6 +92,7 @@ public class Hotels extends JFrame {
         hotelslist.setBounds(235, 50, 130, 30);
         hotelslist.setEditable(false);
         hotelslist.addItemListener(e -> {
+
 
             int index = ((JComboBox) e.getSource()).getSelectedIndex();
             DataBase.ImageSwap.label.setIcon(DataBase.ImageSwap.imRay.get(index));

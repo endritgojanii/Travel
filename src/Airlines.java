@@ -8,6 +8,43 @@ import java.util.Random;
 
 public class Airlines extends JFrame {
 
+    public static String dataefluturimit;
+
+    public static String dataekthimit;
+
+    public static String kompaniaairore;
+
+    public static String ngavendi;
+
+    public static String nevendin;
+
+    public static String numriiulses;
+
+    public static String getDataefluturimit() {
+        return dataefluturimit;
+    }
+
+    public static String getDataekthimit() {
+        return dataekthimit;
+    }
+
+    public static String getKompaniaairore() {
+        return kompaniaairore;
+    }
+
+    public static String getNgavendi() {
+        return ngavendi;
+    }
+
+    public static String getNevendin() {
+        return nevendin;
+    }
+
+    public static String getNumriiulses() {
+        return numriiulses;
+    }
+
+    DataBase dataBase = new DataBase();
 
     public static void main(String[] args) {
 
@@ -75,6 +112,8 @@ public class Airlines extends JFrame {
         datacombobox.setBounds(230, 200, 130, 30);
         datacombobox.setEditable(false);
         datacombobox.addItemListener(e -> {
+
+            dataefluturimit = String.valueOf(datacombobox.getSelectedItem());
 //
         });
         Calendar calendar = Calendar.getInstance();
@@ -93,7 +132,8 @@ public class Airlines extends JFrame {
         JComboBox<DataBase.DateItem> datacombobox1 = new JComboBox<>();
         datacombobox1.setBounds(460, 200, 130, 30);
         datacombobox1.setEditable(false);
-        datacombobox1.addItemListener(e -> {
+        datacombobox1.addItemListener((ItemEvent e) -> {
+            dataekthimit = String.valueOf(datacombobox1.getSelectedItem());
 
         });
         Calendar calendar1 = Calendar.getInstance();
@@ -111,11 +151,7 @@ public class Airlines extends JFrame {
         JComboBox<DataBase.FromAirlinesItem> fromOptions = new JComboBox<>(DataBase.getStatelist());
         fromOptions.setBounds(230, 300, 130, 30);
         fromOptions.setEditable(false);
-        fromOptions.addItemListener(e -> {
-            if (e.getStateChange() == ItemEvent.SELECTED) {
-                e.getItem();
-            }
-        });
+        fromOptions.addItemListener(e -> ngavendi = String.valueOf(fromOptions.getSelectedItem()));
         panel.add(fromOptions);
 
 
@@ -127,11 +163,8 @@ public class Airlines extends JFrame {
         JComboBox<DataBase.FromAirlinesItem> toOptions = new JComboBox<>(DataBase.getStatelist());
         toOptions.setBounds(460, 300, 130, 30);
         toOptions.setEditable(false);
-        toOptions.addItemListener(e -> {
-            if (e.getStateChange() == ItemEvent.SELECTED) {
-                e.getItem();
-
-            }
+        toOptions.addItemListener((ItemEvent e) -> {
+            nevendin = String.valueOf(toOptions.getSelectedItem());
         });
         panel.add(toOptions);
 
@@ -140,41 +173,41 @@ public class Airlines extends JFrame {
         company.setBounds(200, 250, 130, 30);
         panel.add(company);
 
-        JComboBox<DataBase.AirlinesItem> airlinelist = new JComboBox<>(DataBase.getAirlineslist());
+        JComboBox<DataBase.AirlinesItem> airlinelist = new JComboBox<>(dataBase.getAirlineslist());
         airlinelist.setBounds(350, 250, 190, 30);
         airlinelist.setEditable(false);
         airlinelist.addItemListener(e -> {
-
+            kompaniaairore = String.valueOf(airlinelist.getSelectedItem());
         });
+
         panel.add(airlinelist);
 
 
         JLabel selectseat = new JLabel("Select seat:");
-        selectseat.setBounds(120, 350, 80, 30);
+        selectseat.setBounds(270, 350, 80, 30);
         panel.add(selectseat);
 
 
         JLabel selectseata = new JLabel("1 2 3 4");
-        selectseata.setBounds(140, 390, 80, 30);
+        selectseata.setBounds(200, 390, 80, 30);
         selectseata.setForeground(Color.RED);
         panel.add(selectseata);
 
         JLabel selectseatb = new JLabel("5 6 7 8");
-        selectseatb.setBounds(140, 410, 80, 30);
+        selectseatb.setBounds(200, 410, 80, 30);
         selectseatb.setForeground(Color.RED);
         panel.add(selectseatb);
 
         JLabel selectseatc = new JLabel(".  .  .  .");
-        selectseatc.setBounds(140, 430, 80, 30);
+        selectseatc.setBounds(200, 430, 80, 30);
         selectseatc.setForeground(Color.RED);
         panel.add(selectseatc);
 
-
         JComboBox<Seats> seats = new JComboBox<>(getSeatslist());
-        seats.setBounds(215, 350, 130, 30);
+        seats.setBounds(360, 350, 130, 30);
         seats.setEditable(false);
         seats.addItemListener(e -> {
-            System.out.println( seats.getSelectedIndex()+1);
+            System.out.println(seats.getSelectedIndex() + 1);
 
 
             if (Objects.requireNonNull((Seats) seats.getSelectedItem()).getValue()) {
@@ -182,31 +215,16 @@ public class Airlines extends JFrame {
 
             } else {
                 string = "e lire";
+                numriiulses = String.valueOf(seats.getSelectedItem());
 
             }
             JOptionPane.showMessageDialog(null, string);
+
 
         });
 
         panel.add(seats);
 
-
-        JLabel selectpersons = new JLabel("Tickets:");
-        selectpersons.setBounds(420, 350, 80, 30);
-        panel.add(selectpersons);
-
-
-        JComboBox<Integer> persons = new JComboBox<>();
-        persons.setBounds(490, 350, 130, 30);
-        persons.setEditable(false);
-        persons.addItemListener(e -> {
-
-
-        });
-        for (int i = 1; i < 7; i++) {
-            persons.addItem(i);
-        }
-        panel.add(persons);
 
         JButton getTicket = new JButton("Get ticket");
         getTicket.setBounds(360, 410, 100, 30);

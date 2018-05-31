@@ -4,13 +4,32 @@ import java.util.Objects;
 
 public class Travel extends JFrame {
 
+
+    public static String emri = "";
+
+    public static String getEmri() {
+        return emri;
+    }
+
+    public static String mbiemri = "";
+
+    public static String getMbiemri() {
+        return mbiemri;
+    }
+
+    public static String numripersonal = "";
+
+    public static String getNumripersonal() {
+        return numripersonal;
+    }
+
     public static void main(String[] args) {
         Travel ex = new Travel();
         ex.setVisible(true);
 
     }
 
-    private Travel() {
+    Travel() {
         initUI();
     }
 
@@ -57,6 +76,7 @@ public class Travel extends JFrame {
         surname1.setBounds(480, 120, 150, 30);
         panel.add(surname1);
 
+
         JLabel personalnumber = new JLabel("Personal Number:");
         personalnumber.setBounds(230, 170, 120, 30);
         panel.add(personalnumber);
@@ -64,6 +84,7 @@ public class Travel extends JFrame {
         JTextField personno1 = new JTextField(20);
         personno1.setBounds(360, 170, 150, 30);
         panel.add(personno1);
+
 
         JLabel textusername = new JLabel("Username:");
         textusername.setBounds(260, 270, 80, 30);
@@ -92,6 +113,10 @@ public class Travel extends JFrame {
         loginButton.setBounds(360, 400, 80, 30);
         loginButton.setForeground(Color.BLUE);
         loginButton.addActionListener(event -> {
+
+            emri = name1.getText();
+            mbiemri = surname1.getText();
+            numripersonal = personno1.getText();
 
             if (username1.getText().equals(usernameData[0].getName())) {
                 if (password1.getText().equals(passwordData[0].getName())) {
