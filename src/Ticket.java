@@ -60,7 +60,7 @@ public class Ticket extends JFrame {
         dataekthimit1.setBounds(450, 140, 200, 100);
         panel.add(dataekthimit1);
 
-        JLabel kompania = new JLabel("Kompania Airore:");
+        JLabel kompania = new JLabel("Kompania Ajrore:");
         kompania.setBounds(100, 180, 200, 100);
         panel.add(kompania);
 
@@ -68,7 +68,7 @@ public class Ticket extends JFrame {
         kompania1.setBounds(220, 180, 200, 100);
         panel.add(kompania1);
 
-        JLabel numriiulses = new JLabel("Numrat e Ulseve: ");
+        JLabel numriiulses = new JLabel("Numrat e Uleseve: ");
         numriiulses.setBounds(380, 180, 200, 100);
         panel.add(numriiulses);
 

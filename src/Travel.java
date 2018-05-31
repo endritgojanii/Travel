@@ -39,14 +39,14 @@ public class Travel extends JFrame {
 
         panel.setLayout(null);
         UsernameData[] usernameData = new UsernameData[5];
-        usernameData[0] = new UsernameData("");
+        usernameData[0] = new UsernameData("endritgojani");
         usernameData[1] = new UsernameData("endritgojani1");
         usernameData[2] = new UsernameData("endritgojani2");
         usernameData[3] = new UsernameData("endritgojani3");
 
 
         PasswordData[] passwordData = new PasswordData[4];
-        passwordData[0] = new PasswordData("");
+        passwordData[0] = new PasswordData("endriti");
         passwordData[1] = new PasswordData("endriti");
         passwordData[2] = new PasswordData("endriti");
         passwordData[3] = new PasswordData("endriti");

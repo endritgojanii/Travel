@@ -2,15 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.*;
 import java.util.List;
-import java.util.Objects;
-import java.util.Random;
 
 public class Airlines extends JFrame {
 
-    public static String dataefluturimit;
+    private static String dataefluturimit;
 
     public static String dataekthimit;
 
@@ -42,11 +39,11 @@ public class Airlines extends JFrame {
         return nevendin;
     }
 
-    public static  List<String> getNumriiulses() {
+    public static List<String> getNumriiulses() {
         return numriIUlseve;
     }
 
-    DataBase dataBase = new DataBase();
+    private DataBase dataBase = new DataBase();
 
     public static void main(String[] args) {
 
@@ -220,7 +217,6 @@ public class Airlines extends JFrame {
 
             } else {
                 string = "e lire";
-               // numriiulses = String.valueOf(seats.getSelectedItem());
 
             }
             JOptionPane.showMessageDialog(null, string);
@@ -236,20 +232,17 @@ public class Airlines extends JFrame {
         getTicket.setForeground(Color.BLUE);
         getTicket.addActionListener(event -> {
 
-            //Seats seats1 = (Seats) seats.getSelectedItem();
-           // if (!Objects.requireNonNull(seats1).getValue()) {
-                Hotels hotels = null;
-                try {
-                    hotels = new Hotels();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                assert hotels != null;
-                hotels.setVisible(true);
-                dispose();
-           /* } else {
-                JOptionPane.showMessageDialog(null, "Ulseja eshte e rezervuar");
-            }*/
+
+            Hotels hotels = null;
+            try {
+                hotels = new Hotels();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            assert hotels != null;
+            hotels.setVisible(true);
+            dispose();
+
 
         });
         panel.add(getTicket);
