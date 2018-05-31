@@ -2,7 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
@@ -18,7 +20,7 @@ public class Airlines extends JFrame {
 
     public static String nevendin;
 
-    public static String numriiulses;
+    public static List<String> numriIUlseve = new ArrayList();
 
     public static String getDataefluturimit() {
         return dataefluturimit;
@@ -40,8 +42,8 @@ public class Airlines extends JFrame {
         return nevendin;
     }
 
-    public static String getNumriiulses() {
-        return numriiulses;
+    public static  List<String> getNumriiulses() {
+        return numriIUlseve;
     }
 
     DataBase dataBase = new DataBase();
@@ -203,19 +205,22 @@ public class Airlines extends JFrame {
         selectseatc.setForeground(Color.RED);
         panel.add(selectseatc);
 
-        JComboBox<Seats> seats = new JComboBox<>(getSeatslist());
-        seats.setBounds(360, 350, 130, 30);
+        MultipleSelectModel model = new MultipleSelectModel(getSeatslist());
+        model.setSelectedItem(null);
+
+        JComboBox<MultipleSelectModel> seats = new JComboBox<>(model);
+        seats.setBounds(360, 350, 230, 30);
         seats.setEditable(false);
         seats.addItemListener(e -> {
-            System.out.println(seats.getSelectedIndex() + 1);
 
+            System.out.println(seats.getSelectedIndex() + 1);
 
             if (Objects.requireNonNull((Seats) seats.getSelectedItem()).getValue()) {
                 string = "e rezervuar";
 
             } else {
                 string = "e lire";
-                numriiulses = String.valueOf(seats.getSelectedItem());
+               // numriiulses = String.valueOf(seats.getSelectedItem());
 
             }
             JOptionPane.showMessageDialog(null, string);
@@ -231,8 +236,8 @@ public class Airlines extends JFrame {
         getTicket.setForeground(Color.BLUE);
         getTicket.addActionListener(event -> {
 
-            Seats seats1 = (Seats) seats.getSelectedItem();
-            if (!Objects.requireNonNull(seats1).getValue()) {
+            //Seats seats1 = (Seats) seats.getSelectedItem();
+           // if (!Objects.requireNonNull(seats1).getValue()) {
                 Hotels hotels = null;
                 try {
                     hotels = new Hotels();
@@ -242,9 +247,9 @@ public class Airlines extends JFrame {
                 assert hotels != null;
                 hotels.setVisible(true);
                 dispose();
-            } else {
+           /* } else {
                 JOptionPane.showMessageDialog(null, "Ulseja eshte e rezervuar");
-            }
+            }*/
 
         });
         panel.add(getTicket);
@@ -255,6 +260,4 @@ public class Airlines extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
-
 }

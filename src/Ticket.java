@@ -68,12 +68,19 @@ public class Ticket extends JFrame {
         kompania1.setBounds(220, 180, 200, 100);
         panel.add(kompania1);
 
-        JLabel numriiulses = new JLabel("Numri i Ulses:");
+        JLabel numriiulses = new JLabel("Numrat e Ulseve: ");
         numriiulses.setBounds(380, 180, 200, 100);
         panel.add(numriiulses);
 
-        JLabel numriiulses1 = new JLabel(Airlines.getNumriiulses());
-        numriiulses1.setBounds(480, 180, 200, 100);
+
+        StringBuilder numratEUlseve = new StringBuilder();
+
+        for(int i = 0; i < Airlines.getNumriiulses().size(); i++){
+            numratEUlseve.append(Airlines.getNumriiulses().get(i)).append(", ");
+        }
+
+        JLabel numriiulses1 = new JLabel(numratEUlseve.toString());
+        numriiulses1.setBounds(500, 180, 200, 100);
         panel.add(numriiulses1);
 
         JLabel ngavendi = new JLabel("Nga Vendi:");
